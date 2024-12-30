@@ -1,0 +1,55 @@
+{
+  "expo": {
+    "name": "cio-firebase-bug",
+    "slug": "cio-firebase-bug",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": false,
+    "ios": {
+      "supportsTablet": true,
+      "googleServicesFile": "google-services.plist",
+      "bundleIdentifier": "com.ciofirebasebug.app"
+    },
+    "android": {
+      "googleServicesFile": "google-services.json",
+      "package": "com.ciofirebasebug.app"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "expo-font",
+      "@react-native-firebase/app",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "15.1",
+            "useFrameworks": "static"
+          }
+        }
+      ],
+      [
+        "customerio-expo-plugin",
+        {
+          "android": {
+            "googleServicesFile": "google-services.json"
+          },
+          "ios": {
+            "useFrameworks": "static",
+            "pushNotification": {
+              "useRichPush": true,
+              "env": {
+                "cdpApiKey": "[cdpApiKey]",
+                "region": "US"
+              }
+            }
+          }
+        }
+      ]
+    ]
+  }
+}
